@@ -1,0 +1,29 @@
+package br.com.caelum.livraria.util;
+
+import javax.faces.event.PhaseEvent;
+import javax.faces.event.PhaseId;
+import javax.faces.event.PhaseListener;
+
+public class LogPhaseListener implements PhaseListener {
+
+	@Override
+	public void afterPhase(PhaseEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* Exibe no console a fase que esta prestes a executar
+	 * @see javax.faces.event.PhaseListener#beforePhase(javax.faces.event.PhaseEvent)
+	 */
+	@Override
+	public void beforePhase(PhaseEvent event) {
+		System.out.println("FASE: " + event.getPhaseId());
+		
+	}
+
+	@Override
+	public PhaseId getPhaseId() {
+		return PhaseId.ANY_PHASE;
+	}
+
+}
